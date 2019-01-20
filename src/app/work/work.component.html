@@ -1,0 +1,32 @@
+<div class="container container-plus">
+  <form [formGroup]="searchForm" (ngSubmit)="search()"> 
+    <h4>Recherche par techologie</h4>
+    <input type="text" class="form-control" id="name" required formControlName="search" placeholder="recherche">
+    <button type="submit" class="btn btn-custom btn-success">Rechercher</button>
+  </form>
+</div>
+
+<div class="container custom-con">
+  <div [innerHTML]="htmlStr"></div>
+</div>
+
+<hr>
+
+<div class="container">
+  <h1 class="text-center" id="head">Liste des métiers</h1>
+  <div class="row">
+    <div class="col-sm-6 custom" *ngFor="let int of internships">
+      <div class="card">
+          <h2>{{ int.title }}</h2>
+          <p class="author">{{ int.author.firstname }} {{ int.author.name }}</p>
+          <p>Technologies utilisées: </p>
+          <p>
+              <span *ngFor="let link of link_techno_internship">
+                <span class="spanning" *ngIf="link.id_internship_techno.id_internship == int.id_internship">{{ link.id_techno_internship.name }}</span>
+              </span>
+          </p>
+          <button (click)="goto(int.link_pdf)">Télécharger le pdf</button>
+      </div>
+    </div>
+  </div>
+</div>

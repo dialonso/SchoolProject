@@ -1,0 +1,29 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<nav class="navbar navbar-expand-lg navbar-light sticky-top">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <img class="img-brand" src="assets/ci.png">
+            <span class="navbar-brand">Diallo Internationnal</span>
+        </div>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="collapsibleNavbar">
+            <ul class="navbar-nav">
+                <li *ngFor="let page of pages" class="nav-item">
+                    <a class="nav-link" routerLink="{{page.url}}">{{ page.desc }}</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div class="jumbotron text-center">
+    <h1>Panorama des technologies de stages</h1>
+    <p>Statistiques et analyses</p>
+</div>
+<router-outlet></router-outlet>
+
+<footer class="container-fluid text-center footer" style="margin-bottom:0">
+    <p>Diallo Internationnal All Rights Reserved</p>
+</footer>

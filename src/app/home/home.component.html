@@ -1,0 +1,21 @@
+<div class="container bg-3 text-center">
+  <h3 class="margin">Présentation du topic</h3><br>
+
+  <div class="row row-job">
+    <div class="col-sm-12">
+      <h4>Qu'est ce ?</h4>
+      <p>{{ desc }}</p>
+    </div>
+  </div>
+
+  <div class="row" id="head">
+    <div class="col-sm-12">
+      <div style="display: block">
+        <h4>Pourcentage des technologies</h4>
+        <canvas baseChart [data]="pieChartData" [labels]="pieChartLabels" [chartType]="pieChartType" (chartHover)="chartHovered($event)"
+          (chartClick)="chartClicked($event)"></canvas>
+      </div>
+    </div>
+  </div>
+
+</div>
